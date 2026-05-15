@@ -1,0 +1,11 @@
+services:
+  app:
+    build: .
+    container_name: service-persona
+    restart: unless-stopped
+    ports:
+      - "8011:8011"
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://host.docker.internal:3307/personas_db
+      SPRING_DATASOURCE_USERNAME: root
+      SPRING_DATASOURCE_PASSWORD: 123456
